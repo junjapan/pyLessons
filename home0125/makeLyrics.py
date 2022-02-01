@@ -8,7 +8,7 @@ dt_now = datetime.datetime.now()
 dt_now_str = dt_now.strftime('%y%m%d')
 
 #ファイル読み込み
-with open('in_path.txt','r',encoding='utf-8') as file:
+with open('./in_path.txt','r',encoding='utf-8') as file:
     links=file.readlines()
 
 print(links)
@@ -27,7 +27,7 @@ for link in links:
     print(lyricText)
     print(f'{titleText}{dt_now_str}{links.index(link)}.txt')
     #ファイル書き込み
-    with open(f'{dt_now_str}_{links.index(link)}_{titleText}.txt','w',encoding='utf-8') as file:
+    with open(f'./{dt_now_str}_{links.index(link)}_{titleText}.txt','w',encoding='utf-8') as file:
          file.write(f'{lyricText}\n')
     #１秒空ける
     time.sleep(1)
